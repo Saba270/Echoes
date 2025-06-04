@@ -1,11 +1,15 @@
 import "./signup.scss"
 import { useFormik } from "formik"
-import { Link } from "react-router"
+import { Link,useNavigate } from "react-router"
 import { signUpValidationSchema } from "./ValidationSchemas"
 import axios from "axios"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { UserContext } from "../../shared/UserContext"
 
 export const Signup = () => {
+    const { user, setUser } = useContext(UserContext)
+    const navigate = useNavigate()
+
     const form = useFormik({
         initialValues: {
             username: "",
@@ -21,7 +25,9 @@ export const Signup = () => {
             } else {
                 form.setFieldValue("passwordMatched", true)
             }
+
             console.log("submitting")
+
             axios.post("http://localhost:3000/signup", {
                 username: form.values.username,
                 email: form.values.email,
@@ -30,9 +36,15 @@ export const Signup = () => {
             }).then((response) => {
                 if (response.data.keyValue) {
                     setDatabaseError(Object.keys(response.data.keyValue)[0])
-                    console.log(response)
-                }else{
+                } else {
                     setDatabaseError("")
+                    setUser({
+                        username: form.values.username,
+                        email: form.values.email,
+                        password: form.values.password,
+                        memories: [1]
+                    })
+                    navigate("/")
                 }
             })
         }

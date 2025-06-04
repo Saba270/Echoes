@@ -1,7 +1,10 @@
-import {useNavigate} from "react-router"
+import { useNavigate } from "react-router"
+import { useContext } from "react"
+import { UserContext } from "../../shared/UserContext"
 
 export const NavigationBar = () => {
     const navigate = useNavigate()
+    const { user, setUser } = useContext(UserContext)
 
     return (
         <nav>
@@ -17,10 +20,16 @@ export const NavigationBar = () => {
                 <li><a href="">Features</a></li>
             </ul>
 
-            <div>
-                <button onClick={() => {navigate("/login")}} id="login-btn">Log in</button>
-                <button onClick={() => {navigate("/signup")}} className="gradient-btn" id="signup-btn">Begin your journey</button>
-            </div>
+            {!user &&
+                <div>
+                    <button onClick={() => { navigate("/login") }} id="login-btn">Log in</button>
+                    <button onClick={() => { navigate("/signup") }} className="gradient-btn" id="signup-btn">Begin your journey</button>
+                </div>}
+            {user &&
+                <div>
+                    <button id="login-btn" onClick={() => {setUser('')}}>Logout</button>
+                    <span>{user.username}</span>
+                </div>}
         </nav>
     )
 }
