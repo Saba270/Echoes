@@ -1,0 +1,154 @@
+$primary-color: #E9D5FF;
+$primary-color-dark: #c084fc;
+
+@keyframes breathing {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.background-div {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#0d041a, #261839, #0d041a);
+}
+
+.orb {
+    width: 4rem;
+    aspect-ratio: 1;
+    background-color: #3c00ff;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 1;
+    left: 20vw;
+    top: 25vh;
+    animation: breathing 4s ease-in-out infinite;
+
+}
+
+header {
+    padding: 1.5rem 7rem;
+    background: none;
+    height: 40vw;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    height: 3vw;
+}
+
+.logo-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    text-align: start;
+}
+
+.logo-wrapper img {
+    height: 5vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.logo-wrapper p {
+    color: #FFF;
+    font-size: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: $primary-color;
+}
+
+.nav-links a:hover {
+    filter: brightness(0.7);
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+}
+
+nav div button {
+    font-weight: 600;
+    padding: 1rem;
+}
+
+#login-btn {
+    background: none;
+    color: $primary-color;
+}
+
+#signup-btn {
+    color: #FFF;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    margin-top: 3rem;
+    padding: 0 7rem;
+}
+
+.hero-section h1 {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.hero-section p {
+    color: $primary-color;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.hero-section div {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section div button{
+    color: #FFF;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+}
+
+.hero-section div button:last-of-type{
+    background-color: #36194f80;
+    border: 0.1rem solid #a855f7;
+    border-radius: 0.4rem;
+}
+
+.hero-section div button:last-of-type:hover{
+    filter: brightness(0.8);
+}

@@ -1,0 +1,85 @@
+$primary-color: #E9D5FF;
+$primary-color-dark: #c084fc;
+$bg-color-primary: #1a072e80;
+$bg-color-light: #351651;
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#0d041a, #261839, #0d041a);
+    color: #FFF;
+    text-align: center;
+}
+
+.signup-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100vh;
+    justify-content: center;
+}
+
+.logo-wrapper {
+    justify-content: center;
+}
+
+h2 {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+#signin {
+    text-decoration: none;
+    margin-left: 0.5em;
+    color: $primary-color-dark;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: fit-content;
+    background-color: $bg-color-primary;
+    box-sizing: border-box;
+    padding: 1rem;
+    min-width: 25vw;
+    text-align: start;
+    justify-self: center;
+    border: 0.15rem solid $bg-color-light;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+}
+
+form button,
+form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    color: #FFF;
+    border: 0;
+    border-radius: 0.4rem;
+    font-weight: 400;
+    background-color: $bg-color-light;
+}
+
+form input {
+    background-color: $bg-color-light;
+    box-sizing: border-box;
+    border: 0.15rem solid #5a2b86;
+}
+
+form input::-ms-reveal {
+    filter: invert(100%);
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.error-msg {
+    font-size: 0.7rem;
+    color: red;
+}

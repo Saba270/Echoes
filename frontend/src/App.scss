@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+$primary-color: #E9D5FF;
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Outfit", sans-serif;
+    transition: 0.2s;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #C084FC 0%, #EC4899 50%, #A855F7 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-btn {
+    background: linear-gradient(to right, #9333EA 0%, #DB2777 100%);
+    border: 0;
+    border-radius: 0.4rem;
+}
+
+.gradient-btn:hover {
+    filter: brightness(0.8);
+}
+
+button,
+a {
+    cursor: pointer;
+    border: 0;
+}
